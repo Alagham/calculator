@@ -5,7 +5,7 @@ let operator = '';
 
 function appendNumber(value) {
     currentValue += value;
-    resultDisplay.value = currentValue;
+    resultDisplay.value = previousValue + ' ' + operator + ' ' + currentValue;
 }
 
 function chooseOperator(op) {
@@ -16,6 +16,8 @@ function chooseOperator(op) {
     operator = op; 
     previousValue = currentValue;  
     currentValue = ''; 
+   resultDisplay.value = previousValue + " " + operator + " ";
+   
 }
 
 function clearDisplay() {
