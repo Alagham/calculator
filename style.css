@@ -5,7 +5,7 @@
 }
 #hero{
     width: 300px;
-    height: 520px;
+    height: 590px;
     margin: 0px auto;
     right: 100px;
     background-color: rgb(175, 238, 232);
@@ -16,7 +16,6 @@
   width: 300px;
   height: 150px;
 }
-
 #result{
     background-color:rgb(8, 86, 78);
     color: turquoise;
@@ -34,6 +33,10 @@
 background-color: rgb(8, 86, 78);
 color:turquoise;
 }
+.first button:hover{
+    background-color: turquoise;
+    color:rgb(8, 86, 78) ;
+}
 .content{
     margin: 40px;
     margin-top: 5px;
@@ -47,6 +50,11 @@ color:turquoise;
     background-color: rgb(8, 86, 78);
     color:turquoise; 
 }
+.arithimetic-value:hover{
+    background-color: turquoise;
+    color:rgb(8, 86, 78) ;
+
+}
 button{
     width: 50px;
     height: 50px;
@@ -59,13 +67,36 @@ button{
     border: none;
     box-shadow: 1px 1px;
 }
+button:hover{
+color: turquoise;
+background-color:rgb(8, 86, 78) ;
+}
 .last{
     margin-left: 10px;
 }
-#zero{
-    border-radius: 20px;
+#square-root{
+    background-color: rgb(8, 86, 78);
+    color:turquoise; 
+}
+#square-root:hover{
+    background-color: turquoise;
+    color: rgb(8, 86, 78);
+}
+#del-btn{
     width: 100px;
     background-color: rgb(8, 86, 78);
-    color:turquoise; background-color: rgb(8, 86, 78);
     color:turquoise; 
+}
+#del-btn:hover{
+    background-color: turquoise;
+    color: rgb(8, 86, 78);
+}
+#equal-to{
+    width: 100px;
+    background-color: rgb(8, 86, 78);
+    color:turquoise; 
+}
+#equal-to:hover{
+    background-color: turquoise;
+    color: rgb(8, 86, 78);
 }

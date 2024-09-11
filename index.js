@@ -3,24 +3,25 @@ let currentValue = '';
 let previousValue = '';
 let operator = '';
 
-
 function appendNumber(value) {
     currentValue += value;
     resultDisplay.value = currentValue;
 }
+
 function chooseOperator(op) {
     if (currentValue === '') return;
     if (previousValue !== '') {
-        compute();
+        compute();  
     }
-    operator = op;
-    previousValue = currentValue;
-    currentValue = '';
+    operator = op; 
+    previousValue = currentValue;  
+    currentValue = ''; 
 }
+
 function clearDisplay() {
     currentValue = '';
     previousValue = '';
-   operator = '';
+    operator = '';
     resultDisplay.value = '';
 }
 
@@ -38,20 +39,20 @@ function compute() {
         case '-':
             computation = prev - curr;
             break;
-        case '*':
+        case 'x':
             computation = prev * curr;
             break;
-        case '/':
+        case '÷':
             computation = prev / curr;
             break;
         default:
             return;
     }
 
-    currentValue = computation;
-    operator = '';
+    currentValue = computation.toString(); 
+    operator = ''; 
     previousValue = '';
-    resultDisplay.value = currentValue;
+    resultDisplay.value = currentValue; 
 }
 
 function toggleSign() {
@@ -68,7 +69,6 @@ function percentage() {
     }
 }
 
-
 function appendDecimal() {
     if (!currentValue.includes('.')) {
         currentValue += '.';
@@ -76,11 +76,30 @@ function appendDecimal() {
     }
 }
 
+function square() {
+    if (currentValue !== '') {
+        currentValue = (parseFloat(currentValue) ** 2).toString();
+        resultDisplay.value = currentValue;
+    }
+}
+
+function squareRoot() {
+    if (currentValue !== '') {
+        currentValue = Math.sqrt(parseFloat(currentValue)).toString();
+        resultDisplay.value = currentValue;
+    }
+}
+
+function deleteNumber() {
+    currentValue = currentValue.slice(0, -1);
+    resultDisplay.value = currentValue;
+}
 
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', function() {
         const value = this.innerText;
-        if (!isNaN(value)) {
+
+        if (!isNaN(value)) {  
             appendNumber(value);
         } else if (value === 'C') {
             clearDisplay();
@@ -92,8 +111,14 @@ document.querySelectorAll('button').forEach(button => {
             percentage();
         } else if (value === '.') {
             appendDecimal();
-        } else {
-            chooseOperator(value);
+        } else if (value === 'x²') {
+            square();
+        } else if (value === '√x') {
+            squareRoot();
+        } else if (value === 'DEL') {
+            deleteNumber();
+        } else { 
+            chooseOperator(value); 
         }
     });
 });
